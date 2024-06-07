@@ -1,6 +1,8 @@
 import React from 'react'
+import { useWeather } from '../context/weather'
 
 const Card = () => {
+    const weather=useWeather();
   return (
     <div className='container'>
 
@@ -8,12 +10,11 @@ const Card = () => {
         <div className='card__content'>
 
         
-      <img src="pic.png"/>
-      <h2> current temp= 32 c</h2>
-      <h2> feels like= 32 c</h2>
-      <h2> condition =clear,misty</h2>
-      <h5>London ,city of london</h5>
-      <h5>country</h5>
+      <img src={weather?.data?.current?.condition?.icon}/>
+      <h1>{weather?.data?.current?.temp_c} c</h1>
+      <h2>Feels like : {weather.data?.current?.feelslike_c} c</h2>
+      <h2>Condition : {weather.data?.current?.condition?.text}</h2>
+      <h3>{weather.data?.location?.name},{weather.data?.location?.country}</h3>
         </div>
     </div>
     </div>
