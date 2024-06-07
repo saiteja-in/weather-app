@@ -3,11 +3,13 @@ import { useWeather } from '../context/weather'
 
 const Card = () => {
     const weather=useWeather();
+    console.log(weather.data)
   return (
     <div className='container'>
 
     <div className='card'>
         <div className='card__content'>
+            
 
         
       <img src={weather?.data?.current?.condition?.icon}/>

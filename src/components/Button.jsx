@@ -5,9 +5,9 @@ const Button = (props) => {
     <div>
       <button
         onClick={props.onClick}
-        value={props.onClick}
+        // value={props.onClick}
         className="button"
-      >{props.value}</button>
+      >Search</button>
     </div>
   );
 };

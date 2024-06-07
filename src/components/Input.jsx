@@ -6,8 +6,8 @@ const Input = () => {
   return (
     <input
         className="input-field"
-      placeholder="Search Here"
-      value={weather.searchCity}
+      placeholder="Enter the Location"
+      value={weather.searchCity || ""}
       onChange={(e)=>weather.setSearchCity(e.target.value)}
     ></input>
   );

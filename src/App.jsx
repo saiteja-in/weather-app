@@ -1,22 +1,28 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import "./App.css"
 import Card from './components/Card'
 import Input from './components/Input'
 import Button from './components/Button'
 import { useWeather } from './context/weather'
 const App = () => {
-  const weather=useWeather();
-  useEffect(()=>{
-    weather.fetchCurrentLocation()
+  const[showcard,setShowcard]=useState(false);
 
-  },[])
+  const weather=useWeather();
+  // useEffect(()=>{
+  //   weather.fetchCurrentLocation()
+
+  // },[])
+  const function123=()=>{
+    weather.fetchData()
+    setShowcard(true)
+  }
   return (
     <div className='App'>
       <h1>Weather App</h1>
       <Input />
-      <Button onClick={weather.fetchData} value="Search" />
-      <Card />
-      <Button value="Refresh"/>
+      <Button onClick={function123} />
+      {/* <Card /> */}
+      {showcard && <Card />}
     </div>
   )
 }
